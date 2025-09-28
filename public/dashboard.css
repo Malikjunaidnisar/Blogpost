@@ -1,0 +1,261 @@
+
+            /* Reset and base styles */
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+                background-color: #1F2937; /* Primary: dark gray/black for modern minimal look */
+                color: #FFFFFF; /* Secondary: white for clean text */
+                line-height: 1.6;
+                padding: 20px;
+            }
+
+            /* Navigation - Blog header style */
+            nav {
+                background-color: #1F2937;
+                padding: 1rem 0;
+                margin-bottom: 2rem;
+                border-bottom: 1px solid #374151; /* Subtle separator */
+            }
+
+            nav ul {
+                list-style: none;
+                display: flex;
+                justify-content: flex-start;
+                flex-wrap: wrap;
+                gap: 2rem;
+                max-width: 1200px;
+                margin: 0 auto;
+            }
+
+            nav li a {
+                color: #FFFFFF;
+                text-decoration: none;
+                font-weight: 500;
+                padding: 0.5rem 1rem;
+                border-radius: 4px;
+                transition: background-color 0.3s ease, color 0.3s ease;
+            }
+
+            nav li a:hover {
+                color: #3B82F6; /* Accent: blue on hover */
+                background-color: rgba(59, 130, 246, 0.1);
+            }
+
+            /* Main content - Blog header */
+            h1 {
+                text-align: center;
+                margin-bottom: 2rem;
+                font-size: 2.5rem;
+                color: #FFFFFF;
+                font-weight: 300; /* Lighter for modern feel */
+            }
+
+            #list {
+                max-width: 1200px;
+                margin: 0 auto;
+                display: grid;
+                gap: 2rem;
+                grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); /* Wider cards for blog posts */
+            }
+
+            /* Add New Post button - Prominent call-to-action */
+            #list > a:first-child {
+                display: inline-block;
+                width: 100%;
+                text-align: center;
+                margin-bottom: 1rem;
+                grid-column: 1 / -1; /* Span full width on grid */
+            }
+
+            #list > a:first-child button {
+                background-color: #3B82F6; /* Accent: blue */
+                color: #FFFFFF;
+                border: none;
+                padding: 1rem 2rem;
+                font-size: 1.1rem;
+                border-radius: 8px;
+                cursor: pointer;
+                transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+                width: 100%;
+                max-width: 300px;
+            }
+
+            #list > a:first-child button:hover {
+                background-color: #2563EB; /* Darker blue */
+                transform: translateY(-2px);
+                box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+            }
+
+            /* Blog Post Cards - Enhanced for blog feel */
+            #list > div {
+                background-color: #F3F4F6; /* Extra: light gray background for cards */
+                padding: 2rem;
+                border-radius: 12px;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                transition: box-shadow 0.3s ease, transform 0.2s ease;
+                color: #1F2937; /* Dark text on light bg */
+                position: relative;
+                overflow: hidden;
+            }
+
+            #list > div::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                height: 4px;
+                background-color: #3B82F6; /* Blue accent bar for post header */
+            }
+
+            #list > div:hover {
+                box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+                transform: translateY(-4px);
+            }
+
+            /* Post Title - First <p> as title */
+            #list > div p:first-child {
+                font-size: 1.5rem;
+                font-weight: 600;
+                margin-bottom: 0.5rem;
+                color: #1F2937;
+                line-height: 1.3;
+            }
+
+            /* Post Excerpt - Second <p> as description */
+            #list > div p:nth-child(2) {
+                font-size: 1rem;
+                color: #4B5563; /* Slightly muted for excerpt */
+                margin-bottom: 1.5rem;
+                font-style: italic; /* Subtle italic for blog excerpt feel */
+            }
+
+            /* Actions - Update and Delete */
+            .post-actions {
+                display: flex;
+                gap: 0.5rem;
+                flex-wrap: wrap;
+                justify-content: flex-start;
+            }
+
+            #list > div a button,
+            #list > div form button {
+                background-color: #3B82F6; /* Blue for Update */
+                color: #FFFFFF;
+                border: none;
+                padding: 0.75rem 1.5rem;
+                border-radius: 6px;
+                cursor: pointer;
+                font-size: 0.95rem;
+                transition: background-color 0.3s ease, transform 0.1s ease;
+                flex: 1;
+                min-width: 100px;
+            }
+
+            #list > div form button {
+                background-color: #EF4444; /* Red for Delete */
+            }
+
+            #list > div a button:hover {
+                background-color: #2563EB;
+                transform: translateY(-1px);
+            }
+
+            #list > div form button:hover {
+                background-color: #DC2626;
+                transform: translateY(-1px);
+            }
+
+            /* Forms - Inline but responsive */
+            #list > div form {
+                display: inline;
+            }
+
+            /* General links */
+            a {
+                color: #3B82F6; /* Accent: blue */
+                text-decoration: none;
+            }
+
+            a:hover {
+                text-decoration: underline;
+            }
+
+            /* Responsive design - Optimized for blog on all screens */
+            @media (max-width: 768px) {
+                body {
+                    padding: 15px;
+                }
+
+                h1 {
+                    font-size: 2rem;
+                }
+
+                nav ul {
+                    justify-content: center;
+                    gap: 1rem;
+                }
+
+                nav li a {
+                    padding: 0.5rem;
+                    font-size: 0.95rem;
+                }
+
+                #list {
+                    grid-template-columns: 1fr;
+                    gap: 1.5rem;
+                }
+
+                #list > a:first-child button {
+                    padding: 1rem;
+                    font-size: 1rem;
+                }
+
+                #list > div {
+                    padding: 1.5rem;
+                }
+
+                #list > div p:first-child {
+                    font-size: 1.3rem;
+                }
+
+                .post-actions {
+                    flex-direction: column;
+                }
+
+                #list > div a button,
+                #list > div form button {
+                    width: 100%;
+                    margin: 0.25rem 0;
+                }
+            }
+
+            @media (max-width: 480px) {
+                h1 {
+                    font-size: 1.75rem;
+                }
+
+                nav ul {
+                    flex-direction: column;
+                    align-items: center;
+                    gap: 0.75rem;
+                }
+
+                #list > div p:first-child {
+                    font-size: 1.2rem;
+                }
+
+                #list > div p:nth-child(2) {
+                    font-size: 0.95rem;
+                }
+
+                #list > div {
+                    padding: 1.25rem;
+                }
+            }
+        

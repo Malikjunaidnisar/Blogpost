@@ -1,0 +1,198 @@
+
+            /* Reset and base styles - Theme Integration */
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+                background-color: #1F2937; /* Primary: dark gray/black for modern minimal look */
+                color: #FFFFFF; /* Secondary: white for clean text */
+                line-height: 1.6;
+                padding: 20px;
+            }
+
+            /* Navigation - Consistent blog header */
+            nav {
+                background-color: #1F2937; /* Primary background */
+                padding: 1rem 0;
+                margin-bottom: 2rem;
+                border-bottom: 1px solid #374151; /* Subtle separator */
+            }
+
+            nav ul {
+                list-style: none;
+                display: flex;
+                justify-content: flex-start;
+                flex-wrap: wrap;
+                gap: 2rem;
+                max-width: 1200px;
+                margin: 0 auto;
+            }
+
+            nav li a {
+                color: #FFFFFF; /* Secondary: white text */
+                text-decoration: none;
+                font-weight: 500;
+                padding: 0.5rem 1rem;
+                border-radius: 4px;
+                transition: background-color 0.3s ease, color 0.3s ease;
+            }
+
+            nav li a:hover {
+                color: #3B82F6; /* Accent: blue on hover */
+                background-color: rgba(59, 130, 246, 0.1);
+            }
+
+            /* Header styling - Enhanced for blog home */
+            h1 {
+                text-align: center;
+                font-size: 2.5rem;
+                font-weight: 300; /* Lighter for modern feel */
+                margin-bottom: 3rem;
+                color: #FFFFFF; /* Secondary: white */
+                text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+            }
+
+            /* Blog list container */
+            #list {
+                max-width: 1200px;
+                margin: 0 auto;
+                display: grid;
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            /* Individual blog post cards - Extra light gray background */
+            #list > div {
+                background-color: #F3F4F6; /* Extra: light gray for blog cards */
+                color: #1F2937; /* Dark text on light background for readability */
+                padding: 2rem;
+                border-radius: 12px;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                transition: transform 0.3s ease, box-shadow 0.3s ease;
+                position: relative;
+                overflow: hidden;
+                border-left: 4px solid #3B82F6; /* Accent: blue left border */
+            }
+
+            #list > div::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                height: 4px;
+                background-color: #3B82F6; /* Accent: blue top bar */
+            }
+
+            #list > div:hover {
+                transform: translateY(-4px);
+                box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+            }
+
+            /* Title styling (first p in each card) */
+            #list > div p:first-child {
+                font-size: 1.5rem;
+                font-weight: 600;
+                margin-bottom: 0.5rem;
+                color: #1F2937;
+                line-height: 1.3;
+            }
+
+            /* Content styling (second p in each card) */
+            #list > div p:last-child {
+                font-size: 1rem;
+                color: #4B5563; /* Slightly muted for excerpt */
+                margin-bottom: 0; /* No extra margin since no button below */
+                font-style: italic; /* Subtle italic for blog feel */
+            }
+
+            /* General links */
+            a {
+                color: #3B82F6; /* Accent: blue */
+                text-decoration: none;
+            }
+
+            a:hover {
+                text-decoration: underline;
+            }
+
+            /* Responsive design - For all screens */
+            @media (min-width: 768px) {
+                body {
+                    padding: 40px;
+                }
+
+                h1 {
+                    font-size: 3rem;
+                    margin-bottom: 4rem;
+                }
+
+                #list {
+                    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); /* Responsive grid: 1-2+ columns */
+                    gap: 2.5rem;
+                }
+
+                #list > div {
+                    padding: 2.5rem;
+                }
+
+                #list > div p:first-child {
+                    font-size: 1.75rem;
+                }
+            }
+
+            @media (min-width: 1024px) {
+                #list {
+                    grid-template-columns: repeat(2, 1fr); /* Fixed 2 columns on large screens */
+                }
+            }
+
+            @media (max-width: 480px) {
+                body {
+                    padding: 15px;
+                }
+
+                h1 {
+                    font-size: 2rem;
+                    margin-bottom: 2rem;
+                }
+
+                nav ul {
+                    justify-content: center;
+                    gap: 1rem;
+                }
+
+                nav li a {
+                    padding: 0.5rem;
+                    font-size: 0.95rem;
+                }
+
+                #list {
+                    gap: 1.5rem;
+                }
+
+                #list > div {
+                    padding: 1.5rem;
+                }
+
+                #list > div p:first-child {
+                    font-size: 1.25rem;
+                }
+
+                #list > div p:last-child {
+                    font-size: 0.95rem;
+                }
+            }
+
+            @media (max-width: 320px) {
+                nav ul {
+                    flex-direction: column;
+                    align-items: center;
+                    gap: 0.5rem;
+                }
+            }
+        

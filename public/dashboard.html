@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <title>Blog Dashboard</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link href="dashboard.css" rel="stylesheet">
+    </head>
+    <body>
+        <div>
+            <nav>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/dashboard">Dashboard</a></li>
+                    <li><a href="/logout">Logout</a></li>
+                </ul>
+            </nav>
+        </div>
+        <h1>Welcome to Your Blog Posts</h1>
+        <div id="list">
+            <a href="/newpost">
+                <button>Add New Post</button>
+          
+        </div>
+        <script>
+       document.cookie= 'post=;expires=Thu, 01 Jan 1970 00:00:00 UTC;'
+        let cookie = document.cookie
+        
+        let [name,data] = cookie.split('=')
+        data = JSON.parse(data)
+        for(i = 0;i<data.length;i++){
+        
+        	let child = `
+        	                <div>
+        	                    <p>${data[i].title}</p>
+        	                    <p>${data[i].content}</p>
+        	                    <div class="post-actions">
+        	                        <a href="/post/${data[i]._id}"><button>Update</button></a>
+        	                        <form action="http://localhost:3000/post/${data[i]._id}?_method=delete" method="post">
+        	                            <input type="hidden" name="_method" value="delete" />
+        	                            <button type="submit">Delete</button>
+        	                        </form>
+        	                    </div>
+        	                </div>
+        	
+        	            `
+        	let parent = document.getElementById('list')
+        	parent.innerHTML += child
+        }
+        
+        </script>
+    </body>
+</html>

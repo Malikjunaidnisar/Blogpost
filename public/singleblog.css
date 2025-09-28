@@ -1,0 +1,146 @@
+ 
+            /* Reset and base styles for modern minimal look */
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+                background-color: #1F2937; /* Primary: dark gray/black */
+                color: #FFFFFF; /* Secondary white for text on dark backgrounds */
+                line-height: 1.6;
+                padding: 1rem;
+            }
+
+            /* Header styling - stacked vertically with heading on next line and centered */
+            header {
+                background-color: #1F2937; /* Primary dark */
+                color: #FFFFFF; /* Secondary white */
+                padding: 1.5rem 0;
+                margin-bottom: 2rem;
+                border-bottom: 1px solid #4B5563; /* Subtle border */
+                max-width: 1200px;
+                margin: 0 auto 2rem;
+                display: flex;
+                flex-direction: column;
+                align-items: center; /* Overall centering for the stack */
+                text-align: center; /* Center text content */
+                gap: 0.5rem; /* Small gap between anchor and heading */
+            }
+
+            .back-link {
+                color: #3B82F6; /* Accent blue */
+                text-decoration: none;
+                font-weight: 500;
+                transition: color 0.2s ease;
+                font-size: 1rem;
+                align-self: flex-start; /* Anchor aligns to the left on its line */
+                margin-bottom: 0; /* No extra margin, use gap instead */
+            }
+
+            .back-link:hover {
+                color: #1D4ED8; /* Darker blue on hover */
+            }
+
+            h1 {
+                color: #FFFFFF; /* Secondary white */
+                font-size: 2.5rem;
+                font-weight: 600;
+                margin: 0;
+                /* Centered due to text-align: center on header and flex alignment */
+            }
+
+            /* Main content container for blog post */
+            #list {
+                max-width: 800px;
+                margin: 0 auto;
+                background-color: #F3F4F6; /* Extra: light gray for blog cards background */
+                color: #1F2937; /* Dark text for readability on light background */
+                padding: 2rem;
+                border-radius: 12px;
+                box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.2); /* Enhanced shadow for depth */
+            }
+
+            /* Blog post content styling */
+            #list > div {
+                padding: 0; /* No extra padding since container handles it */
+            }
+
+            #list p {
+                font-size: 1.2rem;
+                margin-bottom: 1.5rem;
+                color: #1F2937; /* Dark text */
+                line-height: 1.7;
+            }
+
+            #list p:first-child {
+                font-weight: 500;
+                font-size: 1.3rem;
+                color: #3B82F6; /* Accent blue for title-like paragraphs */
+            }
+
+            /* Footer or additional site elements (optional for blog site feel) */
+            footer {
+                text-align: center;
+                margin-top: 3rem;
+                padding: 1rem;
+                color: #9CA3AF; /* Light gray text */
+                border-top: 1px solid #4B5563;
+                max-width: 800px;
+                margin: 3rem auto 0;
+            }
+
+            /* Responsive design for all screens */
+            @media (max-width: 768px) {
+                body {
+                    padding: 0.5rem;
+                }
+
+                header {
+                    padding: 1rem 0;
+                    gap: 0.25rem;
+                }
+
+                .back-link {
+                    align-self: center; /* On mobile, center the anchor for better balance */
+                    font-size: 0.95rem;
+                }
+
+                h1 {
+                    font-size: 2rem;
+                }
+
+                #list {
+                    padding: 1.5rem;
+                    margin: 0 1rem;
+                }
+
+                #list p {
+                    font-size: 1.1rem;
+                }
+            }
+
+            @media (max-width: 480px) {
+                h1 {
+                    font-size: 1.5rem;
+                }
+
+                #list {
+                    padding: 1rem;
+                    margin: 0 0.5rem;
+                    border-radius: 8px;
+                }
+
+                #list p {
+                    font-size: 1rem;
+                }
+
+                .back-link {
+                    font-size: 0.9rem;
+                }
+            }
+
+            /* Ensure script loads properly without interfering with layout */
+        

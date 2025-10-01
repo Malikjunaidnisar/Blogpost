@@ -8,4 +8,4 @@ let titleContent = document.getElementById('post-content')
 titleContent.value=obj.content
 let form = document.querySelector('form')
 alert(form)
-form.action=`http://localhost:3000/${obj.id}?_method=put`*/
+form.action=`https://blogpost-ogi9.onrender.com/${obj.id}?_method=put`*/

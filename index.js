@@ -50,14 +50,7 @@ let post = [
 	    }
 ]
 
-app.get('/allpost',async (req,res)=>{
-	let allPost = await BlogPost.find({})
-	res.send(allPost)
-	
-})
-app.post('/login',(req,res)=>{
-	res.send(post)
-})
+
 
 
 connectDB()

@@ -265,7 +265,7 @@
 
                         let form = document.querySelector("form");
                         if (form && obj._id) {
-                            form.action = `http://localhost:3000/post/${obj._id}?_method=put`;
+                            form.action = `https://blogpost-ogi9.onrender.com/post/${obj._id}?_method=put`;
                         }
                     } catch (e) {
                         console.error("Error parsing cookie:", e); // Fallback for errors

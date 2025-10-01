@@ -55,7 +55,7 @@ app.get('/allpost',async (req,res)=>{
 	res.send(allPost)
 	
 })
-app.post('/post',(req,res)=>{
+app.post('/login',(req,res)=>{
 	res.send(post)
 })
 

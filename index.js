@@ -19,7 +19,7 @@ const {BlogPost} = require('./model/BlogPost.js')
 const {User} = require('./model/User.js')
 
 const app = express()
-
+const port = process.env.PORT
 
 
 app.use(cookieParser())
@@ -52,12 +52,12 @@ let post = [
 
 app.get('/allpost',async (req,res)=>{
 	let allPost = await BlogPost.find({})
-	res.json(allPost)
+	res.send(allPost)
 	
 })
 
 
 connectDB()
-app.listen(process.env.PORT | 3000,()=>{
+app.listen(port || 3000,()=>{
 	console.log('working')
 })

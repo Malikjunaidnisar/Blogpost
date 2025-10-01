@@ -23,7 +23,7 @@ const port = process.env.PORT
 
 
 app.use(cookieParser())
-app.use(express.json({extended:false}))
+app.use(express.json())
 app.use(express.urlencoded({extended:false}))
 app.use(express.static('public'))
 app.use(methodOverride('_method'))
@@ -54,6 +54,9 @@ app.get('/allpost',async (req,res)=>{
 	let allPost = await BlogPost.find({})
 	res.send(allPost)
 	
+})
+app.post('/post',(req,res)=>{
+	res.send(post)
 })
 
 

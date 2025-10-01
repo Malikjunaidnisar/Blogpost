@@ -21,7 +21,7 @@ loginRouter
 		
 	let user = await User.find({userEmail:req.body.email})
 	if(!user) return res.status(400).redirect('/login')
-	let hash = bcrypt.hashSync(req.body.password,10)
+
 	
 	let confirmUserPassword = bcrypt.compareSync(req.body.password, user[0].userPassword);
 	

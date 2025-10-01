@@ -49,7 +49,11 @@ let post = [
 	        content:'Working on html is easy'
 	    }
 ]
-
+app.get('/allpost',async (req,res)=>{
+	let allPost = await BlogPost.find({})
+	res.send(allPost)
+	
+})
 
 
 

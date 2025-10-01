@@ -34,8 +34,8 @@
         	                    <p>${data[i].title}</p>
         	                    <p>${data[i].content}</p>
         	                    <div class="post-actions">
-        	                        <a href="/post/${data[i]._id}"><button>Update</button></a>
-        	                        <form action="http://localhost:3000/post/${data[i]._id}?_method=delete" method="post">
+        	                        <a href="https://blogpost-ogi9.onrender.com/post/${data[i]._id}"><button>Update</button></a>
+        	                        <form action="/post/${data[i]._id}?_method=delete" method="post">
         	                            <input type="hidden" name="_method" value="delete" />
         	                            <button type="submit">Delete</button>
         	                        </form>

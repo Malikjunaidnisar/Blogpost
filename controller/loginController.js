@@ -16,7 +16,7 @@ loginRouter
 
 })
 
-/*.post('/',async(req,res)=>{
+.post('/',async(req,res)=>{
 	try{
 		
 	let user = await User.find({userEmail:req.body.email})
@@ -39,6 +39,6 @@ loginRouter
 	}
 
 
-})*/
+})
 
 module.exports={loginRouter}

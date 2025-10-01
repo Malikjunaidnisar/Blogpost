@@ -1,5 +1,5 @@
 async function getAllPost(){
-	const res = await fetch('http://localhost:3000/allpost')
+	const res = await fetch('https://blogpost-ogi9.onrender.com/allpost')
 	const data = await res.json()
 	
 	for(i = 0;i < data.length;i++){
